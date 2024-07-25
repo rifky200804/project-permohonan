@@ -18,7 +18,7 @@ class CreatePengajuansTable extends Migration
             $table->string('judul');
             $table->text('deskripsi');
             $table->string('file');
-            $table->string('file_name');
+            $table->string('file_name')->nullable();
             $table->integer('menu_id');
             $table->integer('user_id');
             $table->text('catatan_verifikator')->nullable();
