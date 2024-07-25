@@ -6,7 +6,9 @@
         <div class="card mb-4">
             <div class="card-header pb-0 d-flex justify-content-between align-items-center">
                 <h6 class="mb-0">Menu</h6>
-                <a class="btn btn-primary btn-sm" href="{{route('create',$getPath)}}">Tambah {{$getTitle}}</a>
+                @if (auth()->user()->role == 'user')
+                    <a class="btn btn-primary btn-sm" href="{{route('create',$getPath)}}">Tambah {{$getTitle}}</a>
+                @endif
             </div>
             <div class="card-body px-0 pt-0 pb-2">
                 <div class="table-responsive p-0">
