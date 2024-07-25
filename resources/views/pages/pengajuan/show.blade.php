@@ -9,7 +9,7 @@
             </div>
             <div class="card-body pt-0 pb-2">
                 <div class="table-responsive p-0">
-                    <form action="{{route('update',['menu'=>$getPath,'id'=>$pengajuan->id])}}" method="POST">
+                    <form action="{{route('update',['menu'=>$getPath,'id'=>$pengajuan->id])}}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="row">
