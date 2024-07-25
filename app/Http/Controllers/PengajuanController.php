@@ -91,7 +91,6 @@ class PengajuanController extends Controller
         'judul' => $request->judul,
         'deskripsi' => $request->deskripsi,
         'file' => $fileName,
-        'file_name' => $fileNameOriginal,
         'menu_id' => $menuId,
         'user_id' => $userId,
         'status' => 'waiting to approve verifikator',
@@ -181,6 +180,7 @@ class PengajuanController extends Controller
             $fileName = time() . '_' . $file->getClientOriginalName();
             $fileNameOriginal = $file->getClientOriginalName();
             $file->move(public_path('uploads'), $fileName);
+            $pengajuan->file = $fileName;
         }
         $pengajuan->save();
 
